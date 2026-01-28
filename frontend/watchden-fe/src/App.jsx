@@ -15,6 +15,7 @@ import RoomList from "./pages/RoomList";
 import RoomJoinCreate from "./pages/RoomJoinCreate";
 import RoomView from "./features/room/RoomView";
 import ProfilePage from "./pages/ProfilePage";
+import StreamRoom from "./stream/stream";
 
 // Components
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -71,6 +72,11 @@ function App() {
             </ProtectedRoute>
           }
         />
+
+        <Route
+  path="/stream/:roomId"
+  element={<StreamRoom roomId={roomId} userId={user.id} isHost={isHost} />}
+/>
 
         {/* Catch-all Redirect */}
         <Route path="*" element={<Navigate to="/" replace />} />

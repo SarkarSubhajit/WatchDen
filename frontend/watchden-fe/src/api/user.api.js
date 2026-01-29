@@ -8,7 +8,7 @@ export const userApi = {
   },
 
   updateProfile: async (data) => {
-    // 🟢 Retrieve and parse the user object first
+    // Retrieve and parse the user object first
     const userString = sessionStorage.getItem("user");
     const currentUser = userString ? JSON.parse(userString) : null;
 
@@ -18,7 +18,7 @@ export const userApi = {
 
     const response = await api.put("/users/me", data, {
       headers: {
-        "X-User-Id": currentUser.id, // 🟢 Use the parsed variable name correctly
+        "X-User-Id": currentUser.id, // Use the parsed variable name correctly
       },
     });
     return response.data;

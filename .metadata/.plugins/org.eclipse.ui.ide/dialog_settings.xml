@@ -6,19 +6,14 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
-			<item value="/Users/yashbohra/Desktop/clone/WatchDen/backend"/>
-			<item value="/Users/yashbohra/Desktop/my cdac project/WatchDen/backend/stream-service"/>
-			<item value="/Users/yashbohra/Desktop/my cdac project"/>
-			<item value="/Users/yashbohra/Desktop/clone"/>
-			<item value="/Users/yashbohra/Desktop/my cdac project/clone"/>
-			<item value="/Users/yashbohra/Desktop/my cdac project/WatchDen/backend"/>
+			<item value="C:\Pussy\WatchDen\backend"/>
 		</list>
 		<section name="SmartImportWizard.dialogBounds">
-			<item key="DIALOG_X_ORIGIN" value="280"/>
-			<item key="DIALOG_Y_ORIGIN" value="7"/>
-			<item key="DIALOG_WIDTH" value="880"/>
-			<item key="DIALOG_HEIGHT" value="619"/>
-			<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+			<item key="DIALOG_X_ORIGIN" value="70"/>
+			<item key="DIALOG_Y_ORIGIN" value="-33"/>
+			<item key="DIALOG_WIDTH" value="885"/>
+			<item key="DIALOG_HEIGHT" value="626"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
 		</section>
 	</section>
 </section>

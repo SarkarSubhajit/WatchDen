@@ -29,7 +29,7 @@ const Avatar = ({ src, name, size = "md" }) => {
 
   if (src && !imgError) {
     const fullUrl = getFullUrl(src);
-    console.log(`🖼️ Avatar [${name}]: Trying to load:`, fullUrl);
+    console.log(`Avatar [${name}]: Trying to load:`, fullUrl);
     return (
       <img
         src={fullUrl}

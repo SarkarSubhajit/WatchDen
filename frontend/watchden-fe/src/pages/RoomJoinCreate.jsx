@@ -12,7 +12,7 @@ const RoomJoinCreate = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
   const navigate = useNavigate();
-  const { user, logout } = useAuth(); // 🟢 Ensure logout is destructured from hook
+  const { user, logout } = useAuth(); // Ensure logout is destructured from hook
 
   const handleCreate = async (e) => {
     e.preventDefault();
@@ -43,7 +43,7 @@ const RoomJoinCreate = () => {
     }
   };
 
-  // 🔴 FIXED HANDLE JOIN FUNCTION
+  // FIXED HANDLE JOIN FUNCTION
   const handleJoin = async (e) => {
     e.preventDefault();
     setErrorMessage("");
@@ -53,7 +53,7 @@ const RoomJoinCreate = () => {
       // If successful, go to room
       navigate(`/room/${roomCode}`);
     } catch (error) {
-      // 🟢 FIX: Check if the error is "409 Conflict" (Already Joined)
+      //  FIX: Check if the error is "409 Conflict" (Already Joined)
       // or if the error message mentions "already joined"
       const status = error.response?.status;
       const message = error.response?.data?.message || "";

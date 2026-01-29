@@ -7,20 +7,20 @@ import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketMessageBrokerConfigurer;
 
 @Configuration
-@EnableWebSocketMessageBroker // 👈 1. Enable STOMP Broker
+@EnableWebSocketMessageBroker // Enable STOMP Broker
 public class WebSocketConfig implements WebSocketMessageBrokerConfigurer {
 
     @Override
     public void registerStompEndpoints(StompEndpointRegistry registry) {
-        // 2. Register the "/ws" endpoint that roomSocket.js connects to
+        // Register the "/ws" endpoint that roomSocket.js connects to
         registry.addEndpoint("/ws")
                 .setAllowedOriginPatterns("*") // Allow Gateway connection
-                .withSockJS(); // 👈 Enable SockJS support
+                .withSockJS(); // Enable SockJS support
     }
 
     @Override
     public void configureMessageBroker(MessageBrokerRegistry registry) {
-        // 3. Configure prefixes
+        // Configure prefixes
         // Frontend sends to "/app/..." -> routed to @MessageMapping
         registry.setApplicationDestinationPrefixes("/app");
         

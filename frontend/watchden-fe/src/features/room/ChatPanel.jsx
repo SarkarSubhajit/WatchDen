@@ -29,7 +29,7 @@ const ChatPanel = ({ messages, roomCode }) => {
       {/* Messages List */}
       <div className="messages-list">
         {messages
-          // 🔴 FIX: Filter out non-chat messages or empty content
+          // FIX: Filter out non-chat messages or empty content
           .filter(
             (msg) =>
               msg.type === "CHAT" && msg.content && msg.content.trim() !== ""

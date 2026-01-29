@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class RedisSubscriber implements MessageListener {
 
-    private final SimpMessagingTemplate messagingTemplate; // 👈 Use this for STOMP
+    private final SimpMessagingTemplate messagingTemplate; // for STOMP
     private final ObjectMapper objectMapper;
 
     public RedisSubscriber(SimpMessagingTemplate messagingTemplate) {
@@ -23,21 +23,21 @@ public class RedisSubscriber implements MessageListener {
     public void onMessage(Message message, byte[] pattern) {
         try {
             String body = new String(message.getBody());
-            // System.out.println("1️⃣ REDIS RAW MSG: " + body);
+            // System.out.println("REDIS RAW MSG: " + body);
 
             ChatMessage chatMessage = objectMapper.readValue(body, ChatMessage.class);
-            // System.out.println("2️⃣ PARSED ROOM ID: " + chatMessage.getRoomId());
+            // System.out.println("PARSED ROOM ID: " + chatMessage.getRoomId());
 
-            // 🚀 STOMP PUSH: Send to everyone subscribed to "/topic/room/{roomId}"
+            // STOMP PUSH: Send to everyone subscribed to "/topic/room/{roomId}"
             // This matches the frontend subscribe path: `/topic/room/${roomId}`
             String destination = "/topic/room/" + chatMessage.getRoomId();
             
             messagingTemplate.convertAndSend(destination, chatMessage);
             
-            System.out.println("✅ STOMP SENT TO: " + destination);
+            System.out.println("STOMP SENT TO: " + destination);
 
         } catch (Exception e) {
-            System.err.println("❌ REDIS SUB ERROR: " + e.getMessage());
+            System.err.println("REDIS SUB ERROR: " + e.getMessage());
             e.printStackTrace();
         }
     }

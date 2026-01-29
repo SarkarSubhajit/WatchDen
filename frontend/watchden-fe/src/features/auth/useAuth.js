@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { authApi } from "../../api/auth.api";
-import { authUtils } from "./auth.utils"; // 🟢 Import your utils
+import { authUtils } from "./auth.utils"; 
 
 export const useAuth = () => {
-  // 🟢 1. FIX: Initialize state from LocalStorage immediately
+  // 1. FIX: Initialize state from LocalStorage immediately
   // This prevents the "Login" button from flashing on refresh
   const [user, setUser] = useState(authUtils.getUser());
 
@@ -25,7 +25,7 @@ export const useAuth = () => {
         roles: data.roles,
       };
 
-      // 🟢 2. FIX: Save to Storage SYNCHRONOUSLY
+      // 2. FIX: Save to Storage SYNCHRONOUSLY
       // This runs before the function returns, so the data is 100% ready
       // when your Login page calls navigate("/rooms")
       authUtils.setAuth(data.token, userData);
@@ -59,7 +59,7 @@ export const useAuth = () => {
   };
 
   const logout = () => {
-    // 🟢 3. FIX: Clear storage immediately
+    // 3. FIX: Clear storage immediately
     authUtils.clearAuth();
     setUser(null);
 

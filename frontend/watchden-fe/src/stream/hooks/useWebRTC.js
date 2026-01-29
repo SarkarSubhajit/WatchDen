@@ -14,7 +14,7 @@ export const createPeerConnection = (
   localStream.getTracks().forEach((track) => {
     const sender = pc.addTrack(track, localStream);
 
-    // 🔧 Bitrate cap (important)
+    // Bitrate cap (important)
     if (track.kind === "video") {
       const params = sender.getParameters();
       params.encodings = [

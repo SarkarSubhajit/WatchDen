@@ -12,7 +12,7 @@ const VideoPlayer = ({ roomCode }) => {
 
   return (
     <div className="player-wrapper" style={styles.wrapper}>
-      {/* 📺 Video Display Area */}
+      {/* Video Display Area */}
       <div style={styles.playerContainer}>
         <ReactPlayer
           url={url}
@@ -25,7 +25,7 @@ const VideoPlayer = ({ roomCode }) => {
         />
       </div>
 
-      {/* 🛠 Control Bar (URL and Play/Pause) */}
+      {/* Control Bar (URL and Play/Pause) */}
       <div className="video-controls" style={styles.controlsBar}>
         <div style={styles.inputWrapper}>
           <span style={styles.inputIcon}>🔗</span>

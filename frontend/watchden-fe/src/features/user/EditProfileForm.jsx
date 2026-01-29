@@ -6,7 +6,7 @@ const EditProfileForm = ({ currentProfile, onUpdateSuccess, onCancel }) => {
     currentProfile?.displayName || ""
   );
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(""); // 🟢 Added local error state
+  const [error, setError] = useState(""); // Added local error state
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const EditProfileForm = ({ currentProfile, onUpdateSuccess, onCancel }) => {
       onUpdateSuccess(updatedUser);
     } catch (err) {
       console.error("Failed to update profile", err);
-      // 🟢 Logic: Catch specific error messages from backend if available
+      // Logic: Catch specific error messages from backend if available
       const backendMessage =
         err.response?.data?.message ||
         "Something went wrong. Please try again.";
@@ -33,7 +33,7 @@ const EditProfileForm = ({ currentProfile, onUpdateSuccess, onCancel }) => {
 
   return (
     <form onSubmit={handleSubmit} style={styles.form}>
-      {/* 🟢 Render error message if it exists */}
+      {/*  Render error message if it exists */}
       {error && (
         <div style={styles.errorBanner}>
           <span style={{ marginRight: "8px" }}>⚠️</span> {error}
